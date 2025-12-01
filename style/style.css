@@ -11,4 +11,8 @@ body{
 }
 #main{
     margin: auto;
+    background-color: #606c38;
+    width: 50rem;
+    height: 30rem;
+    border-radius: 16px;
 }
