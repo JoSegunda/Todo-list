@@ -53,5 +53,7 @@ body{
     color: #fefae0;
 }
 .view-list{
-    
+    background-color: #4a5428ae;
+    padding: 12px;
+    border-radius: 16px;
 }
