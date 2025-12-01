@@ -21,3 +21,12 @@ body{
 .fa-plus{
     color: #bc6c25;
 }
+.icon{
+    background-color: #fefae0;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    width: .1rem;
+    border-radius: 100%;
+}
