@@ -30,3 +30,7 @@ body{
     width: .1rem;
     border-radius: 100%;
 }
+#navigation{
+    display: flex;
+    gap: 16px;
+}
