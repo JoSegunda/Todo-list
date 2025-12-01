@@ -36,6 +36,14 @@ body{
     width: .1rem;
     border-radius: 100%;
 }
+.icon:hover{
+    background-color: #283618;
+    cursor: pointer;
+    .fa-plus{
+        color: #fefae0;
+    }
+    
+}
 #navigation{
     display: flex;
     gap: 3rem;
