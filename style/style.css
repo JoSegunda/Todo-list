@@ -60,3 +60,6 @@ body{
 .active{
     background-color: #dda15e;
 }
+.no-show{
+    display: none;
+}
