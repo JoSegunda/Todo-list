@@ -10,6 +10,9 @@ body{
     height: 100vh;
 }
 #main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: auto;
     background-color: #606c38;
     width: 50rem;
