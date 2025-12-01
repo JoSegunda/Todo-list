@@ -57,3 +57,6 @@ body{
     padding: 12px;
     border-radius: 16px;
 }
+.active{
+    background-color: #dda15e;
+}
