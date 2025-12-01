@@ -38,8 +38,9 @@ body{
 }
 #navigation{
     display: flex;
-    gap: 16px;
+    gap: 3rem;
     padding: 12px;
     margin-top: 2rem;
-    font-size: large;
+    font-size: 1.3rem;
+    color: #fefae0;
 }
