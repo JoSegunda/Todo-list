@@ -36,4 +36,6 @@ body{
 #navigation{
     display: flex;
     gap: 16px;
+    padding: 12px;
+    margin-top: 2rem;
 }
