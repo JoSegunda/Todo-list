@@ -7,4 +7,8 @@
 body{
     background-color: #dda15e;
     display: flex;
+    height: 100vh;
+}
+#main{
+    margin: auto;
 }
