@@ -11,21 +11,13 @@ if (newItem.classList[1].localeCompare('inactive')) {
 }
 
 
+
+window.addEventListener('hashchange', updateContent);
+
+
 const updateContent = () => {
     const content = document.getElementById('content')
     const hash = window.location.hash.substring(1) // remove o # do hash
-    
-    window.addEventListener('click', (e) =>{
-        //get active element
-        const activeElement = document.querySelector('.active')
-        activeElement.classList.remove('active')
-        activeElement.classList.add('inactive')
-
-        //Define new target element
-        const newActive = e.target
-        newActive.classList.remove('inactive')
-        newActive.classList.add('active')
-    })
 
     const currentState = document.querySelector('.active')
 
@@ -54,6 +46,3 @@ const updateContent = () => {
         break;
     }
 }
-
-window.addEventListener('hashchange', updateContent);
-
