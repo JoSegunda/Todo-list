@@ -1,25 +1,8 @@
-//Set new active element
-const newItem = document.querySelector('.view-list')
-if (newItem.classList[1].localeCompare('inactive')) {
-    //get active element
-    const activeElement = document.querySelector('.active')
-    activeElement.classList.remove('active')
-    activeElement.classList.add('inactive')
-
-    newItem.classList.remove('inactive')
-    newItem.classList.add('active')
-}
-
-
-
-window.addEventListener('hashchange', updateContent);
-
-
-const updateContent = () => {
+window.addEventListener('hashchange', () => {
+    SetActive()
+    
     const content = document.getElementById('content')
     const hash = window.location.hash.substring(1) // remove o # do hash
-
-    const currentState = document.querySelector('.active')
 
     switch(hash){
         case 'active':
@@ -45,4 +28,5 @@ const updateContent = () => {
             `;
         break;
     }
-}
+
+});
