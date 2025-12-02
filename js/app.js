@@ -1,8 +1,18 @@
 const updateContent = () => {
     const content = document.getElementById('content')
-    console.log(content)
     const hash = window.location.hash.substring(1) // remove o # do hash
-    console.log("hello")
+    
+    window.addEventListener('click', (e) =>{
+        //get active element
+        const activeElement = document.querySelector('.active')
+        activeElement.classList.remove('active')
+        activeElement.classList.add('inactive')
+
+        //Define new target element
+        const newActive = e.target
+        newActive.classList.remove('inactive')
+        newActive.classList.add('active')
+    })
 
     const currentState = document.querySelector('.active')
 
