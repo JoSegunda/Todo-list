@@ -3,6 +3,11 @@ const updateContent = () => {
     const hash = window.hash.substring(1) // remove o # do hash
 
     switch(hash){
-        case ''
+        case 'active':
+            content.innerHTML = 
+            `
+                <h1>Active</h1>
+                <p>Bem vindo a active page
+            `
     }
 }
