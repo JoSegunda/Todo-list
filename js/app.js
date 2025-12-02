@@ -1,3 +1,16 @@
+//Set new active element
+const newItem = document.querySelector('.view-list')
+if (newItem.classList[1].localeCompare('inactive')) {
+    //get active element
+    const activeElement = document.querySelector('.active')
+    activeElement.classList.remove('active')
+    activeElement.classList.add('inactive')
+
+    newItem.classList.remove('inactive')
+    newItem.classList.add('active')
+}
+
+
 const updateContent = () => {
     const content = document.getElementById('content')
     const hash = window.location.hash.substring(1) // remove o # do hash
