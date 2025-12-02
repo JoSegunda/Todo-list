@@ -64,3 +64,8 @@ body{
 .no-show{
     display: none;
 }
+#content{
+    background-color: #bc6c25;
+    height: 70px;
+    width: 50%;
+}

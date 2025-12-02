@@ -1,6 +1,7 @@
 const updateContent = () => {
     const content = document.getElementById('content')
-    const hash = window.hash.substring(1) // remove o # do hash
+    console.log(content)
+    const hash = window.location.hash.substring(1) // remove o # do hash
     console.log("hello")
 
     const currentState = document.querySelector('.active')
@@ -30,4 +31,5 @@ const updateContent = () => {
         break;
     }
 }
+
 window.addEventListener('hashchange', updateContent);
