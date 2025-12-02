@@ -43,3 +43,4 @@ const updateContent = () => {
 }
 
 window.addEventListener('hashchange', updateContent);
+
