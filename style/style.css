@@ -52,6 +52,10 @@ body{
     font-size: 1.3rem;
     color: #fefae0;
 }
+a{
+    color: #fefae0;
+    text-decoration: none;
+}
 .view-list{
     background-color: #4a5428ae;
     padding: 12px;
