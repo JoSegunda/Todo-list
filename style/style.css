@@ -88,11 +88,9 @@ a{
     color: red;
     cursor: pointer;
 }
-.fa-circle-check{
-    color: #fefae0;
+.fa-solid.fa-circle-check{
+    color: green;
 }
-.iscompleted span{
-    border: 1px solid red;
-    border-radius: 100%;
-    
+.hide-fa{
+    display: none;
 }
