@@ -81,12 +81,18 @@ a{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: baseline;
     width: inherit;
 }
 .fa-trash:hover{
     color: red;
     cursor: pointer;
 }
-input[type="radio"]{
-    font-size: 13rem;
+.fa-circle-check{
+    color: #fefae0;
+}
+.iscompleted span{
+    border: 1px solid red;
+    border-radius: 100%;
+    
 }
