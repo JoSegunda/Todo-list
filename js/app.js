@@ -30,10 +30,20 @@ window.addEventListener('hashchange', () => {
     }
 
 });
-function setActive(){
+
+function setActive(item){
         //Get the element that was clicked allways the first
-        
-        
+        const newActive = document.querySelector(`#${item}`)
+        console.log(newActive.classList[1])
+
+        if (newActive.classList[1] === 'inactive') {
+            const currentActive = document.querySelector('.active')
+            currentActive.classList.remove('active')
+            currentActive.classList.add('inactive')
+
+            newActive.classList.remove('inactive')
+            newActive.classList.add('active')
+        }
 
         //Get the current item
 
