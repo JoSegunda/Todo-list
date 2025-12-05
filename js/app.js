@@ -1,5 +1,4 @@
 window.addEventListener('hashchange', () => {
-    SetActive()
     
     const content = document.getElementById('content')
     const hash = window.location.hash.substring(1) // remove o # do hash
