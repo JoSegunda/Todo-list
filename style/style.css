@@ -68,8 +68,15 @@ a{
 .no-show{
     display: none;
 }
+
+/* CONTENT PART OF ADDING THE TASKS */
+
 #content{
-    background-color: #bc6c25;
-    height: 70px;
-    width: 50%;
+    background-color: #fefae0;
+    border-radius: 16px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    width: 27rem;
 }
