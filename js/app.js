@@ -1,6 +1,5 @@
 window.addEventListener('hashchange', () => {
     
-    
     const content = document.getElementById('content')
     const hash = window.location.hash.substring(1) // remove o # do hash
 
@@ -34,7 +33,6 @@ window.addEventListener('hashchange', () => {
 function setActive(item){
         //Get the element that was clicked allways the first
         const newActive = document.querySelector(`#${item}`)
-        console.log(newActive.classList[1])
 
         if (newActive.classList[1] === 'inactive') {
             const currentActive = document.querySelector('.active')
