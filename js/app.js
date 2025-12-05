@@ -1,3 +1,5 @@
+const addButton = document.getElementById('addButton')
+
 window.addEventListener('hashchange', () => {
     
     const content = document.getElementById('content')
