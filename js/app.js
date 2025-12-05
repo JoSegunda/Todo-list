@@ -1,4 +1,11 @@
 window.addEventListener('hashchange', () => {
+    const setActive = () => {
+        //Get the element that was clicked
+
+        //Get the current item
+
+        //Get the active item
+    }
     
     const content = document.getElementById('content')
     const hash = window.location.hash.substring(1) // remove o # do hash
