@@ -27,7 +27,7 @@ body{
 .fa-plus{
     color: #bc6c25;
 }
-.icon{
+.addIcon{
     background-color: #fefae0;
     display: flex;
     justify-content: center;
@@ -36,7 +36,7 @@ body{
     width: .1rem;
     border-radius: 100%;
 }
-.icon:hover{
+.addIcon:hover{
     background-color: #283618;
     cursor: pointer;
     .fa-plus{
