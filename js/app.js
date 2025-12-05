@@ -1,6 +1,7 @@
 window.addEventListener('hashchange', () => {
     const setActive = () => {
         //Get the element that was clicked
+        
 
         //Get the current item
 
