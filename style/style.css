@@ -133,6 +133,10 @@ label{
 #taskform{
     margin: auto;
 }
+#taskform input[type="text"]{
+    display: block;
+    padding: 8px;
+}
 .fa-xmark:hover{
     color: red;
     cursor: pointer;
