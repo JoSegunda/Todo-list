@@ -93,6 +93,7 @@ a{
 
 /* Modal style */
 .modal-container{
+    opacity: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -106,6 +107,7 @@ a{
 }
 .modal{
     background-color: #fefae0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
     border-radius: 16px;
     height: 30vh;
     padding: 16px;
