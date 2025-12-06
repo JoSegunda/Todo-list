@@ -2,7 +2,8 @@ const addButton = document.getElementById('addButton')
 
 
 addButton.addEventListener('click', () => {
-    console.log("hello")
+    const modal_container = document.getElementById('modal-container')
+    const close = document.getElementById('')
 })
 
 
