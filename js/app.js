@@ -30,7 +30,8 @@ submitTask.addEventListener('click', (e) => {
     const task = document.getElementById('task-name')
     const task_name = ""+task.value
     if (!task_name) {
-    alert("Tarefa n")
+        alert("Tarefa não válida")
+        return
     }
     let newTask = {"Name":task.value, "completed":false}
     tasks.push(newTask)
