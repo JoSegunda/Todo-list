@@ -135,13 +135,14 @@ label{
     margin: auto;
 }
 #taskform input[type="text"]{
+    margin-top: 2rem;
     display: block;
-    padding: 8px;
     border-top: 0;
     border-right: 0;
     border-left: 0;
     background-color: #fefae0;
     border-bottom: 1px solid #dda15e;
+    outline: 0;
 }
 .fa-xmark:hover{
     color: red;
