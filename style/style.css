@@ -39,10 +39,6 @@ body{
 .addIcon:hover{
     background-color: #283618;
     cursor: pointer;
-    .fa-plus{
-        color: #fefae0;
-    }
-    
 }
 #navigation{
     display: flex;
