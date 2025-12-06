@@ -3,7 +3,7 @@ const modal_container = document.getElementById('modal-container')
 const close = document.getElementById('close-modal')
 const modal = document.getElementById('modal')
 const submitTask = document.getElementById('submit-task')
-var tasks = { }
+var tasks = []
 
 addButton.addEventListener('click', () => {
     modal_container.classList.add('show')
@@ -24,7 +24,8 @@ modal_container.addEventListener('click', (e) => {
 })
 
 submitTask.addEventListener('click', () => {
-    const task = document.getElementById
+    const task = document.getElementById('task-name')
+    let newTask = {"Name":task, "completed":false}
 })
 
 window.addEventListener('hashchange', () => {
