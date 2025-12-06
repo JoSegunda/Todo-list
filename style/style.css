@@ -119,8 +119,8 @@ a{
     padding: 16px;
     max-width: 100%;
 }
-.fa-xmark{
-    margin: auto;
+#fa-p{
+    text-align: right;
 }
 .fa-xmark:hover{
     color: red;
