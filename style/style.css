@@ -97,5 +97,11 @@ a{
 
 /* Modal style */
 .modal-container{
-    display: none;
+    background-color: #fefae0;
+    border-radius: 16px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 50vh;
+    width: 50vh;
 }
