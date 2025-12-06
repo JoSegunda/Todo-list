@@ -121,4 +121,5 @@ a{
 }
 .fa-xmark:hover{
     color: red;
+    cursor: pointer;
 }
