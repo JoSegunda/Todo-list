@@ -5,7 +5,7 @@ const modal = document.getElementById('modal')
 const submitTask = document.getElementById('submit-task')
 var tasks = []
 let tasksCount = 0
-const activeTasks = ""
+var activeTasks = ""
 
 addButton.addEventListener('click', () => {
     modal_container.classList.add('show')
@@ -26,15 +26,20 @@ modal_container.addEventListener('click', (e) => {
 })
 
 submitTask.addEventListener('click', (e) => {
+    e.preventDefault()
     const task = document.getElementById('task-name')
-    let newTask = {"Name":task, "completed":false}
+    const task_name = ""+task.value
+    if (!task_name) {
+    alert("Tarefa n")
+    }
+    let newTask = {"Name":task.value, "completed":false}
     tasks.push(newTask)
     tasksCount += 1
 
     
-    console.log("")
-    console.log(task.Name)
-    activeTasks = `
+    if (task_name) {
+        console.log("valid entry")
+        activeTasks = `
 
     <div id="tarefas">
         <div class="iscompleted"><i onclick="taskCompleted()" class="fa-regular fa-circle-check fa-lg show-fa"></i><i class="fa-solid fa-circle-check fa-lg hide-fa"></i></div>
@@ -43,6 +48,8 @@ submitTask.addEventListener('click', (e) => {
     </div>
 
     `;
+    }
+    
         
 
 })
@@ -54,7 +61,7 @@ window.addEventListener('hashchange', () => {
 
     switch(hash){
         case 'active':
-            console.log("OK")
+            console.log(activeTasks)
             
         break;
         case 'completed':
