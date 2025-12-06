@@ -1,9 +1,9 @@
 const addButton = document.getElementById('addButton')
-
+const modal_container = document.getElementById('modal-container')
+const close = document.getElementById('')
 
 addButton.addEventListener('click', () => {
-    const modal_container = document.getElementById('modal-container')
-    const close = document.getElementById('')
+    
 })
 
 
