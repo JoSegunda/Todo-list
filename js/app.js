@@ -23,9 +23,10 @@ modal_container.addEventListener('click', (e) => {
     }
 })
 
-submitTask.addEventListener('click', () => {
+submitTask.addEventListener('click', (e) => {
     const task = document.getElementById('task-name')
     let newTask = {"Name":task, "completed":false}
+    tasks.push(newTask)
 })
 
 window.addEventListener('hashchange', () => {
