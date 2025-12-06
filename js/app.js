@@ -2,7 +2,7 @@ const addButton = document.getElementById('addButton')
 
 
 addButton.addEventListener('click', () => {
-    
+    console.log("hello")
 })
 
 
