@@ -151,7 +151,7 @@ label{
 #submit-task{
     border-radius: 12px;
     width: 100%;
-    height: 3em;
+    height: 2em;
     outline: 0;
     border: 0;
     text-align: center;
@@ -159,7 +159,11 @@ label{
     margin-top: 1rem;
     background-color: #283618;
     color: #dda15e;
-    font-weight: bold;
+    cursor: pointer;
+    font-size: large;
+}
+#submit-task:hover{
+    opacity: .9;
 }
 .fa-xmark:hover{
     color: red;
