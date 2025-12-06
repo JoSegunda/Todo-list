@@ -23,6 +23,9 @@ modal_container.addEventListener('click', (e) => {
     }
 })
 
+submitTask.addEventListener('click', () => {
+    const task = document.getElementById
+})
 
 window.addEventListener('hashchange', () => {
     
