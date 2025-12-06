@@ -148,6 +148,19 @@ label{
     width: 100%;
     color: #283618;
 }
+#submit-task{
+    border-radius: 12px;
+    width: 100%;
+    height: 3em;
+    outline: 0;
+    border: 0;
+    text-align: center;
+    padding: 5px;
+    margin-top: 1rem;
+    background-color: #283618;
+    color: #dda15e;
+    font-weight: bold;
+}
 .fa-xmark:hover{
     color: red;
     cursor: pointer;
