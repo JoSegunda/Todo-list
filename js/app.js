@@ -36,6 +36,7 @@ window.addEventListener('hashchange', () => {
 
     switch(hash){
         case 'active':
+            tasks.forEach(task in tasks)
             content.innerHTML = 
             `
                 <h1>Active</h1>
