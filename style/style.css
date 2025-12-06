@@ -129,6 +129,7 @@ a{
 }
 label{
     display: block;
+    text-align: center;
 }
 #taskform{
     margin: auto;
@@ -136,6 +137,11 @@ label{
 #taskform input[type="text"]{
     display: block;
     padding: 8px;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    background-color: #fefae0;
+    border-bottom: 1px solid #dda15e;
 }
 .fa-xmark:hover{
     color: red;
