@@ -113,6 +113,8 @@ a{
 }
 .modal{
     display: flex;
+    justify-content: space-between;
+    flex-direction: column;
     background-color: #fefae0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
     border-radius: 16px;
@@ -121,8 +123,9 @@ a{
     width: 600px;
     max-width: 100%;
 }
-#fa-p{
-    align-self: flex-end;
+#close-modal{
+    margin-left:95%;
+    text-align: center;
 }
 label{
     display: block;
