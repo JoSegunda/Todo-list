@@ -1,12 +1,24 @@
 const addButton = document.getElementById('addButton')
 const modal_container = document.getElementById('modal-container')
 const close = document.getElementById('close-modal')
+const modal = document.getElementById('modal')
 
 addButton.addEventListener('click', () => {
     modal_container.classList.add('show')
 })
 close.addEventListener('click', () => {
     modal_container.classList.remove('show')
+})
+// Evita que cliques dentro do modal (conteúdo) fechem o modal
+modal.addEventListener('click', (e) => {
+    e.stopPropagation()
+})
+
+// Fecha o modal quando o usuário clica no backdrop (fora do conteúdo)
+modal_container.addEventListener('click', (e) => {
+    if (e.target === modal_container) {
+        modal_container.classList.remove('show')
+    }
 })
 
 
