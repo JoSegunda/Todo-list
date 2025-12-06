@@ -105,4 +105,6 @@ a{
     height: 100vh;
     width: 100vh;
 }
-.modal
+.modal{
+    background-color: #fefae0;
+}
