@@ -112,15 +112,23 @@ a{
     pointer-events: auto;
 }
 .modal{
+    display: flex;
     background-color: #fefae0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
     border-radius: 16px;
     height: 30vh;
     padding: 16px;
+    width: 600px;
     max-width: 100%;
 }
 #fa-p{
-    text-align: right;
+    align-self: flex-end;
+}
+label{
+    display: block;
+}
+#taskform{
+    margin: auto;
 }
 .fa-xmark:hover{
     color: red;
