@@ -130,6 +130,7 @@ a{
 label{
     display: block;
     text-align: center;
+    color: #283618;
 }
 #taskform{
     margin: auto;
@@ -143,6 +144,9 @@ label{
     background-color: #fefae0;
     border-bottom: 1px solid #dda15e;
     outline: 0;
+    font-size: large;
+    width: 100%;
+    color: #283618;
 }
 .fa-xmark:hover{
     color: red;
