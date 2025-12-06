@@ -2,6 +2,7 @@ const addButton = document.getElementById('addButton')
 const modal_container = document.getElementById('modal-container')
 const close = document.getElementById('close-modal')
 const modal = document.getElementById('modal')
+var tasks = { }
 
 addButton.addEventListener('click', () => {
     modal_container.classList.add('show')
