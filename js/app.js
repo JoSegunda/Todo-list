@@ -4,6 +4,8 @@ const close = document.getElementById('close-modal')
 const modal = document.getElementById('modal')
 const submitTask = document.getElementById('submit-task')
 var tasks = []
+let tasksCount = 0
+const activeTasks = ""
 
 addButton.addEventListener('click', () => {
     modal_container.classList.add('show')
@@ -27,6 +29,22 @@ submitTask.addEventListener('click', (e) => {
     const task = document.getElementById('task-name')
     let newTask = {"Name":task, "completed":false}
     tasks.push(newTask)
+    tasksCount += 1
+
+    
+    console.log("")
+    console.log(task.Name)
+    activeTasks = `
+
+    <div id="tarefas">
+        <div class="iscompleted"><i onclick="taskCompleted()" class="fa-regular fa-circle-check fa-lg show-fa"></i><i class="fa-solid fa-circle-check fa-lg hide-fa"></i></div>
+        <div id="tarefa-name"><p>${task.Name}</p></div>
+        <div id="deleteTask"><i class="fa-solid fa-trash" id="${tasksCount}"></i></div>
+    </div>
+
+    `;
+        
+
 })
 
 window.addEventListener('hashchange', () => {
@@ -36,12 +54,8 @@ window.addEventListener('hashchange', () => {
 
     switch(hash){
         case 'active':
-            tasks.forEach(task in tasks)
-            content.innerHTML = 
-            `
-                <h1>Active</h1>
-                <p>Bem vindo a active page
-            `;
+            console.log("OK")
+            
         break;
         case 'completed':
             
