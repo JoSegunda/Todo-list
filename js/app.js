@@ -115,5 +115,6 @@ function delTask(itemId) {
         const toDelete = document.getElementsByClassName(itemId)[0]
         toDelete.remove()
         activeTasks.pop(itemId-1)
+        updateContent()
     })
 }
