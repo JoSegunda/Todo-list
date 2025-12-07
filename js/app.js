@@ -3,7 +3,7 @@ const modal_container = document.getElementById('modal-container')
 const close = document.getElementById('close-modal')
 const modal = document.getElementById('modal')
 const submitTask = document.getElementById('submit-task')
-const deleteTask = document.getElementById('deleteTask')
+var deleteTask = ""
 var tasks = []
 let tasksCount = 0
 var activeTasks = ""
@@ -43,7 +43,7 @@ submitTask.addEventListener('click', (e) => {
     if (task_name) {
         activeTasks += `
 
-        <div id="tarefas" class="${tasksCount}">
+        <div id="tarefas" class="task${tasksCount}">
             <div class="iscompleted"><i onclick="taskCompleted()" class="fa-regular fa-circle-check fa-lg show-fa"></i><i class="fa-solid fa-circle-check fa-lg hide-fa"></i></div>
             <div id="tarefa-name"><p>${task_name}</p></div>
             <div id="deleteTask"><i class="fa-solid fa-trash" onclick="delTask(${tasksCount})"></i></div>
@@ -63,7 +63,7 @@ function updateContent(){
         case 'active':
             content.innerHTML = ""
             content.innerHTML += activeTasks
-            const deleteTask = document.getElementById('deleteTask')
+            deleteTask = document.getElementById('deleteTask')
         break;
         case 'completed':
             content.innerHTML = 
@@ -109,9 +109,10 @@ function setActive(item){
         //Get the active item
     }
 
-function delTask() {
-    console.log("It's working")
+function delTask(itemId) {
+    console.log(itemId)
         deleteTask.addEventListener('click', () => {
-        console.log("Working")
+        const toDelete = document.getElementsByClassName(itemId)
+        console.log(toDelete)
     })
 }
