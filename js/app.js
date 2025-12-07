@@ -3,7 +3,7 @@ const modal_container = document.getElementById('modal-container')
 const close = document.getElementById('close-modal')
 const modal = document.getElementById('modal')
 const submitTask = document.getElementById('submit-task')
-const deleteTask = document.getElementById('delete')
+const deleteTask = document.getElementById('deleteTask')
 var tasks = []
 let tasksCount = 0
 var activeTasks = ""
@@ -26,6 +26,10 @@ modal_container.addEventListener('click', (e) => {
     }
 })
 
+deleteTask.addEventListener('click', () => {
+    console.log("Working")
+})
+
 submitTask.addEventListener('click', (e) => {
     e.preventDefault()
     const task = document.getElementById('task-name')
@@ -40,7 +44,6 @@ submitTask.addEventListener('click', (e) => {
 
     
     if (task_name) {
-        console.log("valid entry")
         activeTasks += `
 
         <div id="tarefas">
