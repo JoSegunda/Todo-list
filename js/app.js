@@ -43,7 +43,7 @@ submitTask.addEventListener('click', (e) => {
     if (task_name) {
         activeTasks += `
 
-        <div id="tarefas" class="task${tasksCount}">
+        <div id="tarefas" class="${tasksCount}">
             <div class="iscompleted"><i onclick="taskCompleted()" class="fa-regular fa-circle-check fa-lg show-fa"></i><i class="fa-solid fa-circle-check fa-lg hide-fa"></i></div>
             <div id="tarefa-name"><p>${task_name}</p></div>
             <div id="deleteTask"><i class="fa-solid fa-trash" onclick="delTask(${tasksCount})"></i></div>
@@ -110,7 +110,7 @@ function setActive(item){
     }
 
 function delTask(itemId) {
-    console.log(itemId)
+        console.log(itemId)
         deleteTask.addEventListener('click', () => {
         const toDelete = document.getElementsByClassName(itemId)
         console.log(toDelete)
