@@ -65,13 +65,13 @@ a{
     display: none;
 }
 #content{
-    margin-top: 1rem;
     width: 27rem;
 }
 
 /* CONTENT PART OF ADDING THE TASKS */
 
 #tarefas{
+    margin-top: 1rem;
     background-color: #fefae0;
     border-radius: 16px;
     padding: 1rem;
