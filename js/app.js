@@ -25,11 +25,6 @@ modal_container.addEventListener('click', (e) => {
         modal_container.classList.remove('show')
     }
 })
-if(deleteTask){
-    deleteTask.addEventListener('click', () => {
-    console.log("Working")
- })
-}
 
 
 submitTask.addEventListener('click', (e) => {
@@ -48,12 +43,11 @@ submitTask.addEventListener('click', (e) => {
     if (task_name) {
         activeTasks += `
 
-        <div id="tarefas">
+        <div id="tarefas" class="${tasksCount}">
             <div class="iscompleted"><i onclick="taskCompleted()" class="fa-regular fa-circle-check fa-lg show-fa"></i><i class="fa-solid fa-circle-check fa-lg hide-fa"></i></div>
             <div id="tarefa-name"><p>${task_name}</p></div>
-            <div id="deleteTask"><i class="fa-solid fa-trash" id="${tasksCount}"></i></div>
+            <div id="deleteTask"><i class="fa-solid fa-trash" onclick="delTask(${tasksCount})"></i></div>
         </div>
-
 
         `;
         // Atualiza a view atual assim que a tarefa é criada
@@ -69,6 +63,7 @@ function updateContent(){
         case 'active':
             content.innerHTML = ""
             content.innerHTML += activeTasks
+            const deleteTask = document.getElementById('deleteTask')
         break;
         case 'completed':
             content.innerHTML = 
@@ -112,4 +107,11 @@ function setActive(item){
         //Get the current item
 
         //Get the active item
+    }
+
+    function delTask() {
+        console.log("It's working")
+            deleteTask.addEventListener('click', () => {
+            console.log("Working")
+        })
     }
