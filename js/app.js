@@ -62,7 +62,11 @@ function updateContent(){
     switch(hash){
         case 'active':
             content.innerHTML = ""
-            content.innerHTML += activeTasks
+            var temp = ""
+            activeTasks.forEach((struct) => {
+                temp += struct
+            })
+            content.innerHTML = temp
             deleteTask = document.getElementById('deleteTask')
         break;
         case 'completed':
