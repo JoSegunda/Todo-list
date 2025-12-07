@@ -109,9 +109,9 @@ function setActive(item){
         //Get the active item
     }
 
-    function delTask() {
-        console.log("It's working")
-            deleteTask.addEventListener('click', () => {
-            console.log("Working")
-        })
-    }
+function delTask() {
+    console.log("It's working")
+        deleteTask.addEventListener('click', () => {
+        console.log("Working")
+    })
+}
