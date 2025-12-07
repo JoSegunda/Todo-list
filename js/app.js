@@ -64,7 +64,10 @@ function updateContent(){
             content.innerHTML = ""
             var temp = ""
             activeTasks.forEach((struct) => {
-                temp += struct
+                if (struct) {
+                    temp += struct
+                }
+                
             })
             content.innerHTML = temp
             deleteTask = document.getElementById('deleteTask')
@@ -113,6 +116,7 @@ function delTask(itemId) {
         console.log(itemId)
         deleteTask.addEventListener('click', () => {
         const toDelete = document.getElementsByClassName(itemId)[0]
+        activeTasks.pop(itemId-1)
         toDelete.remove()
         updateContent()
     })
