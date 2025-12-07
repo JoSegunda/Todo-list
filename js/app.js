@@ -65,6 +65,7 @@ function updateContent(){
             var temp = ""
             activeTasks.forEach((struct) => {
                 temp += struct
+                console.log(temp)
             })
             content.innerHTML = temp
             deleteTask = document.getElementById('deleteTask')
