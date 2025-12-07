@@ -25,10 +25,12 @@ modal_container.addEventListener('click', (e) => {
         modal_container.classList.remove('show')
     }
 })
-
-deleteTask.addEventListener('click', () => {
+if(deleteTask){
+    deleteTask.addEventListener('click', () => {
     console.log("Working")
-})
+ })
+}
+
 
 submitTask.addEventListener('click', (e) => {
     e.preventDefault()
