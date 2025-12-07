@@ -41,7 +41,7 @@ submitTask.addEventListener('click', (e) => {
 
     
     if (task_name) {
-        activeTasks[tasksCount-1] += `
+        activeTasks[tasksCount-1] = `
 
         <div id="tarefas" class="${tasksCount}">
             <div class="iscompleted"><i onclick="taskCompleted()" class="fa-regular fa-circle-check fa-lg show-fa"></i><i class="fa-solid fa-circle-check fa-lg hide-fa"></i></div>
@@ -65,7 +65,6 @@ function updateContent(){
             var temp = ""
             activeTasks.forEach((struct) => {
                 temp += struct
-                console.log(temp)
             })
             content.innerHTML = temp
             deleteTask = document.getElementById('deleteTask')
@@ -119,7 +118,6 @@ function delTask(itemId) {
         deleteTask.addEventListener('click', () => {
         const toDelete = document.getElementsByClassName(itemId)[0]
         toDelete.remove()
-        activeTasks.pop(itemId-1)
         updateContent()
     })
 }
