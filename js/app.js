@@ -42,31 +42,28 @@ submitTask.addEventListener('click', (e) => {
         console.log("valid entry")
         activeTasks = `
 
-    <div id="tarefas">
-        <div class="iscompleted"><i onclick="taskCompleted()" class="fa-regular fa-circle-check fa-lg show-fa"></i><i class="fa-solid fa-circle-check fa-lg hide-fa"></i></div>
-        <div id="tarefa-name"><p>${task.Name}</p></div>
-        <div id="deleteTask"><i class="fa-solid fa-trash" id="${tasksCount}"></i></div>
-    </div>
+        <div id="tarefas">
+            <div class="iscompleted"><i onclick="taskCompleted()" class="fa-regular fa-circle-check fa-lg show-fa"></i><i class="fa-solid fa-circle-check fa-lg hide-fa"></i></div>
+            <div id="tarefa-name"><p>${task_name}</p></div>
+            <div id="deleteTask"><i class="fa-solid fa-trash" id="${tasksCount}"></i></div>
+        </div>
 
-    `;
+
+        `;
+        // Atualiza a view atual assim que a tarefa é criada
+        updateContent()
     }
-    
-        
-
 })
 
-window.addEventListener('hashchange', () => {
-    
+function updateContent(){
     const content = document.getElementById('content')
     const hash = window.location.hash.substring(1) // remove o # do hash
 
     switch(hash){
         case 'active':
-            console.log(activeTasks)
-            
+            content.innerHTML += activeTasks
         break;
         case 'completed':
-            
             content.innerHTML = 
             `
                 <h1>Completed</h1>
@@ -80,9 +77,17 @@ window.addEventListener('hashchange', () => {
                 <p>Bem vindo a All-todos page</p>
             `;
         break;
+        default:
+            // Se não houver hash, mantém o conteúdo atual ou mostra active por padrão
+            // content.innerHTML = activeTasks
+        break;
     }
+}
 
-});
+window.addEventListener('hashchange', updateContent);
+
+// Renderiza a view atual ao carregar o script (útil ao recarregar a página)
+updateContent();
 
 function setActive(item){
         //Get the element that was clicked allways the first
