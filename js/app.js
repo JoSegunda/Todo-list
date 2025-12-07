@@ -40,7 +40,7 @@ submitTask.addEventListener('click', (e) => {
     
     if (task_name) {
         console.log("valid entry")
-        activeTasks = `
+        activeTasks += `
 
         <div id="tarefas">
             <div class="iscompleted"><i onclick="taskCompleted()" class="fa-regular fa-circle-check fa-lg show-fa"></i><i class="fa-solid fa-circle-check fa-lg hide-fa"></i></div>
@@ -61,6 +61,7 @@ function updateContent(){
 
     switch(hash){
         case 'active':
+            content.innerHTML = ""
             content.innerHTML += activeTasks
         break;
         case 'completed':
