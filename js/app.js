@@ -107,10 +107,6 @@ function setActive(item){
             newActive.classList.remove('inactive')
             newActive.classList.add('active')
         }
-
-        //Get the current item
-
-        //Get the active item
     }
 
 function delTask(itemId) {
