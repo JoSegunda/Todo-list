@@ -38,7 +38,6 @@ submitTask.addEventListener('click', (e) => {
     let newTask = {"Name":task.value, "completed":false}
     tasks.push(newTask)
     tasksCount += 1
-
     
     if (task_name) {
         activeTasks[tasksCount-1] = `
