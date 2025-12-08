@@ -65,7 +65,6 @@ function updateContent(){
                 if (struct) {
                     temp += struct
                 }
-                
             })
             content.innerHTML = temp
             deleteTask = document.getElementById('deleteTask')
