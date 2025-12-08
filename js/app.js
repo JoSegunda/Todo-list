@@ -105,7 +105,6 @@ function setActive(item){
             newActive.classList.add('active')
         }
     }
-
 function delTask(itemId) {
         console.log(itemId)
         deleteTask.addEventListener('click', () => {
