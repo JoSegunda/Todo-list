@@ -17,7 +17,6 @@ close.addEventListener('click', () => {
 modal.addEventListener('click', (e) => {
     e.stopPropagation()
 })
-
 // Fecha o modal quando o usuário clica no backdrop (fora do conteúdo)
 modal_container.addEventListener('click', (e) => {
     if (e.target === modal_container) {
