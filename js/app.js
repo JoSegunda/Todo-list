@@ -89,7 +89,6 @@ function updateContent(){
         break;
     }
 }
-
 window.addEventListener('hashchange', updateContent);
 
 // Renderiza a view atual ao carregar o script (útil ao recarregar a página)
