@@ -7,7 +7,6 @@ var deleteTask = ""
 var tasks = []
 let tasksCount = 0
 var activeTasks = []
-
 addButton.addEventListener('click', () => {
     modal_container.classList.add('show')
 })
