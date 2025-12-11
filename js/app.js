@@ -33,7 +33,7 @@ submitTask.addEventListener('click', (e) => {
         alert("Tarefa não válida")
         return
     }
-    let newTask = {"Name":task.value, "completed":false}
+    let newTask = {"Name":task.value, "id":tasksCount,"completed":false}
     tasks.push(newTask)
     
     
