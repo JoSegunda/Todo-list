@@ -35,6 +35,7 @@ submitTask.addEventListener('click', (e) => {
     }
     // Create a new todo with an id and set completed to false
     let newTask = {"Name":task.value, "id":tasksCount,"completed":false}
+    // Add the created object to the existent tasks
     tasks.push(newTask)
     
     
