@@ -127,10 +127,8 @@ function setActive(item){
         }
     }
 function delTask(itemId) {
-
-        deleteTask.addEventListener('click', () => {
-        const toDelete = document.getElementsByClassName(itemId)[0]
-
-        console.log(toDelete)
-    })
+    const toDelete = document.getElementsByClassName(itemId)[0]
+    
+    tasks.forEach
+        
 }
