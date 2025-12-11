@@ -126,6 +126,8 @@ function setActive(item){
             newActive.classList.add('active')
         }
     }
+
+    
 function delTask(itemId) {
     const toDelete = document.getElementsByClassName(itemId)[0]
     
