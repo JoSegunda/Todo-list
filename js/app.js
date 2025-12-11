@@ -68,7 +68,7 @@ function updateContent(){
                 const innerObject = Object.values(task)
                 innerObject.forEach((value) => {
 
-                    
+                    console.log(value)
                 })
             })
             activeTasks.forEach((struct) => {
