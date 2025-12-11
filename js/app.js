@@ -133,6 +133,11 @@ function delTask(itemId) {
     var count = 0
     var item = 0;
     
+    if (itemId == 0) {
+        tasks.pop(itemId)
+        return
+    }
+    
     //Looping each item of the array
     tasks.forEach((obj) => {
 
