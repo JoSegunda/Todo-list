@@ -136,14 +136,6 @@ function delTask(itemId) {
     var count = 0
     var item = 0;
     
-    console.log(tasks)
-    if (itemId === 0) {
-        tasks.shift()
-        console.log(tasks)
-        updateContent()
-        return
-    }
-    
     //Looping each item of the array
     tasks.forEach((obj) => {
 
@@ -155,7 +147,7 @@ function delTask(itemId) {
             // get the current index
             item == count
         }
-        // updtae count
+        // update count
         count += 1;
     })
     
