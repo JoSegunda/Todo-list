@@ -108,10 +108,12 @@ function delTask(itemId) {
 
         deleteTask.addEventListener('click', () => {
         const toDelete = document.getElementsByClassName(itemId)[0]
-
-        activeTasks.pop(itemId-1)
-        toDelete.remove()
         
+        console.log(activeTasks[itemId])
+        console.log(toDelete)
+
+        
+
         updateContent()
     })
 }
