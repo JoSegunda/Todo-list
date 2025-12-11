@@ -44,7 +44,7 @@ submitTask.addEventListener('click', (e) => {
     }
     // Create a new todo with an id and set completed to false
     let newTask = {name:task.value, id:tasksCount,completed:false}
-    
+
     // Add the created object to the existent tasks
     tasks.push(newTask)
     
@@ -73,24 +73,18 @@ function updateContent(){
             // this loop is to get each object inside the array
             tasks.forEach((task) => {
 
-                const innerObject = Object.values(task)
-                // This loop is to get each object content
-                innerObject.forEach((value) => {
-                    // This checks if the tasks are completed or not, so they can be shown
-                    if(!value[2]){  // If the task is not completed (false) we can show it
-                        console.log(value)
-                        temp = `
-
-                        <div id="tarefas" class="${value[1]}">
-                            <div class="iscompleted"><i onclick="taskCompleted()" class="fa-regular fa-circle-check fa-lg show-fa"></i><i class="fa-solid fa-circle-check fa-lg hide-fa"></i></div>
-                            <div id="tarefa-name"><p>${value[0]}</p></div>
-                            <div id="deleteTask"><i class="fa-solid fa-trash" onclick="delTask(${value[1]})"></i></div>
-                        </div>
-
-                        `;
-                    }
-                    
-                })
+                const objectValues = Object.values(task)
+             
+                if(!objectValues[2]){  // If the task is not completed (false) we can show it
+                        
+                    temp = `
+                    <div id="tarefas" class="${objectValues[1]}">
+                        <div class="iscompleted"><i onclick="taskCompleted()" class="fa-regular fa-circle-check fa-lg show-fa"></i><i class="fa-solid fa-circle-check fa-lg hide-fa"></i></div>
+                        <div id="tarefa-name"><p>${objectValues[0]}</p></div>
+                        <div id="deleteTask"><i class="fa-solid fa-trash" onclick="delTask(${objectValues[1]})"></i></div>
+                    </div>
+                    `;
+                }
                 content.innerHTML += temp
             })
             
