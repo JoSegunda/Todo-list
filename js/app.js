@@ -43,7 +43,8 @@ submitTask.addEventListener('click', (e) => {
         return
     }
     // Create a new todo with an id and set completed to false
-    let newTask = {Name:task.value, id:tasksCount,completed:false}
+    let newTask = {name:task.value, id:tasksCount,completed:false}
+    
     // Add the created object to the existent tasks
     tasks.push(newTask)
     
@@ -77,6 +78,7 @@ function updateContent(){
                 innerObject.forEach((value) => {
                     // This checks if the tasks are completed or not, so they can be shown
                     if(!value[2]){  // If the task is not completed (false) we can show it
+                        console.log(value)
                         temp = `
 
                         <div id="tarefas" class="${value[1]}">
