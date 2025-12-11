@@ -3,7 +3,7 @@ const modal_container = document.getElementById('modal-container')
 const close = document.getElementById('close-modal')
 const modal = document.getElementById('modal')
 const submitTask = document.getElementById('submit-task')
-const from = document.getElementById('taskform')
+const form = document.getElementById('taskform')
 
 
 var deleteTask = ""
@@ -51,6 +51,9 @@ submitTask.addEventListener('click', (e) => {
     if (task_name) {
         // Show a message that the task has been added
         alert("The task was succesfuly added")
+
+        // Do a reset on the form
+        form.reset()
 
         tasksCount += 1
         // Atualiza a view atual assim que a tarefa é criada
