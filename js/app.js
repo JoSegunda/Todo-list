@@ -35,6 +35,7 @@ modal_container.addEventListener('click', (e) => {
 
 
 submitTask.addEventListener('click', (e) => {
+    deleteTask = document.getElementById('deleteTask')
     e.preventDefault()
     const task = document.getElementById('task-name')
     const task_name = ""+task.value
@@ -88,7 +89,7 @@ function updateContent(){
                 content.innerHTML += temp
             })
             
-            deleteTask = document.getElementById('deleteTask')
+            
         break;
         case 'completed':
             content.innerHTML = 
@@ -113,6 +114,8 @@ function updateContent(){
 window.addEventListener('hashchange', updateContent);
 // Renderiza a view atual ao carregar o script (útil ao recarregar a página)
 updateContent();
+
+
 function setActive(item){
         //Get the element that was clicked allways the first
         const newActive = document.querySelector(`#${item}`)
