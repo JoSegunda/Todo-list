@@ -145,7 +145,7 @@ function delTask(itemId) {
         // if the id equals the itemId
         if (values[1] == itemId) {
             // get the current index
-            item == count
+            item == count;
         }
         // update count
         count += 1;
