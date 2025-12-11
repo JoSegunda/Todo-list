@@ -132,9 +132,11 @@ function delTask(itemId) {
     // count gets the number of iteratios, item will be the item that is equal to the itemIds
     var count = 0
     var item = 0;
-    console.log(itemId)
-    if (itemId == 0) {
-        tasks.pop(itemId)
+    
+    console.log(tasks)
+    if (itemId === 0) {
+        tasks.shift()
+        console.log(tasks)
         updateContent()
         return
     }
