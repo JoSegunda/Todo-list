@@ -134,7 +134,7 @@ function setActive(item){
 function delTask(itemId) {
     // count gets the number of iteratios, item will be the item that is equal to the itemIds
     var count = 0
-    var item = 0;
+    var item = 0
     
     //Looping each item of the array
     tasks.forEach((obj) => {
