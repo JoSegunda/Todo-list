@@ -7,6 +7,9 @@ var deleteTask = ""
 var tasks = []
 let tasksCount = 0
 var activeTasks = []
+
+
+
 addButton.addEventListener('click', () => {
     modal_container.classList.add('show')
 })
@@ -42,6 +45,7 @@ submitTask.addEventListener('click', (e) => {
     if (task_name) {
         // Show a message that the task has been added
         alert("The task was succesfuly added")
+
         tasksCount += 1
         // Atualiza a view atual assim que a tarefa é criada
         updateContent()
