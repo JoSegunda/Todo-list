@@ -35,10 +35,10 @@ submitTask.addEventListener('click', (e) => {
     }
     let newTask = {"Name":task.value, "completed":false}
     tasks.push(newTask)
-    tasksCount += 1
+    
     
     if (task_name) {
-        activeTasks[tasksCount-1] = `
+        activeTasks[tasksCount] = `
 
         <div id="tarefas" class="${tasksCount}">
             <div class="iscompleted"><i onclick="taskCompleted()" class="fa-regular fa-circle-check fa-lg show-fa"></i><i class="fa-solid fa-circle-check fa-lg hide-fa"></i></div>
@@ -47,6 +47,7 @@ submitTask.addEventListener('click', (e) => {
         </div>
 
         `;
+        tasksCount += 1
         // Atualiza a view atual assim que a tarefa é criada
         updateContent()
     }
