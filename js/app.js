@@ -40,15 +40,7 @@ submitTask.addEventListener('click', (e) => {
     
     
     if (task_name) {
-        activeTasks[tasksCount] = `
-
-        <div id="tarefas" class="${tasksCount}">
-            <div class="iscompleted"><i onclick="taskCompleted()" class="fa-regular fa-circle-check fa-lg show-fa"></i><i class="fa-solid fa-circle-check fa-lg hide-fa"></i></div>
-            <div id="tarefa-name"><p>${task_name}</p></div>
-            <div id="deleteTask"><i class="fa-solid fa-trash" onclick="delTask(${tasksCount})"></i></div>
-        </div>
-
-        `;
+        
         tasksCount += 1
         // Atualiza a view atual assim que a tarefa é criada
         updateContent()
@@ -70,7 +62,7 @@ function updateContent(){
                 // This loop is to get each object content
                 innerObject.forEach((value) => {
                     // This checks if the tasks are completed or not, so they can be shown
-                    if(!value[2]){
+                    if(!value[2]){  // If the task is not completed (false) we can show it
                         temp = `
 
                         <div id="tarefas" class="${value[1]}">
