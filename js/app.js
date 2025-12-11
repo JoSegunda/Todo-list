@@ -63,10 +63,11 @@ function updateContent(){
         case 'active':
             content.innerHTML = ""
             var temp = ""
-
+            // this loop is to get each object inside the array
             tasks.forEach((task) => {
-                console.log("Until here ok")
+
                 const innerObject = Object.values(task)
+                // This loop is to get each object content
                 innerObject.forEach((value) => {
 
                     temp = `
