@@ -131,11 +131,14 @@ function setActive(item){
 function delTask(itemId) {
     const toDelete = document.getElementsByClassName(itemId)[0]
 
+    // count gets the number of iteratios, item will be the item that is equal to the itemIds
     var count = 0
     var item = 0;
     
+    //Looping each item of the the array
     tasks.forEach((obj) => {
 
+        // Get the current object, each one has 3 values [name,id, complted]
         const values = Object.values(obj)
 
         if (values[1] == itemId) {
