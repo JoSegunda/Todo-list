@@ -4,6 +4,8 @@ const close = document.getElementById('close-modal')
 const modal = document.getElementById('modal')
 const submitTask = document.getElementById('submit-task')
 const from = document.getElementById('taskform')
+
+
 var deleteTask = ""
 var tasks = []
 let tasksCount = 0
