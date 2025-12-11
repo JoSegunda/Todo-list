@@ -132,14 +132,18 @@ function delTask(itemId) {
     const toDelete = document.getElementsByClassName(itemId)[0]
 
     var count = 0
+    var item = 0;
     
     tasks.forEach((obj) => {
 
         const values = Object.values(obj)
 
         if (values[1] == itemId) {
-            break;
+            item == count
         }
+
+        count += 1;
     })
-        
+    
+    tasks.pop(item)
 }
