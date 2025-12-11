@@ -129,6 +129,12 @@ function setActive(item){
 function delTask(itemId) {
     const toDelete = document.getElementsByClassName(itemId)[0]
     
-    tasks.forEach
+    tasks.forEach((obj) => {
+
+        const keys = Object.values(obj)
+        if (keys[1] == itemId) {
+            
+        }
+    })
         
 }
