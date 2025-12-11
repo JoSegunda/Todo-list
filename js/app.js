@@ -63,7 +63,14 @@ function updateContent(){
         case 'active':
             content.innerHTML = ""
             var temp = ""
-            
+
+            tasks.forEach((task) => {
+                const innerObject = Object.values(task)
+                innerObject.forEach((value) => {
+
+                    
+                })
+            })
             activeTasks.forEach((struct) => {
                 if (struct) {
                     temp += struct
