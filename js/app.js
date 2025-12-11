@@ -69,8 +69,9 @@ function updateContent(){
                 const innerObject = Object.values(task)
                 // This loop is to get each object content
                 innerObject.forEach((value) => {
-
-                    temp = `
+                    // This checks if the tasks are completed or not, so they can be shown
+                    if(!value[2]){
+                        temp = `
 
                         <div id="tarefas" class="${value[1]}">
                             <div class="iscompleted"><i onclick="taskCompleted()" class="fa-regular fa-circle-check fa-lg show-fa"></i><i class="fa-solid fa-circle-check fa-lg hide-fa"></i></div>
@@ -79,6 +80,8 @@ function updateContent(){
                         </div>
 
                         `;
+                    }
+                    
                 })
                 content.innerHTML += temp
             })
