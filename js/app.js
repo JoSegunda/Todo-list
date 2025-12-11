@@ -69,16 +69,19 @@ function updateContent(){
                 const innerObject = Object.values(task)
                 innerObject.forEach((value) => {
 
-                    console.log(value)
-                })
-            })
+                    temp = `
 
-            activeTasks.forEach((struct) => {
-                if (struct) {
-                    temp += struct
-                }
+                        <div id="tarefas" class="${value[1]}">
+                            <div class="iscompleted"><i onclick="taskCompleted()" class="fa-regular fa-circle-check fa-lg show-fa"></i><i class="fa-solid fa-circle-check fa-lg hide-fa"></i></div>
+                            <div id="tarefa-name"><p>${value[0]}</p></div>
+                            <div id="deleteTask"><i class="fa-solid fa-trash" onclick="delTask(${value[1]})"></i></div>
+                        </div>
+
+                        `;
+                })
+                content.innerHTML += temp
             })
-            content.innerHTML = temp
+            
             deleteTask = document.getElementById('deleteTask')
         break;
         case 'completed':
