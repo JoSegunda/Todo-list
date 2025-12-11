@@ -141,10 +141,12 @@ function delTask(itemId) {
         // Get the current object, each one has 3 values [name,id, complted]
         const values = Object.values(obj)
 
+        // if the id equals the itemId
         if (values[1] == itemId) {
+            // get the current index
             item == count
         }
-
+        // updtae count
         count += 1;
     })
     
