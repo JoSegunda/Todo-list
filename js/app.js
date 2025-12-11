@@ -33,6 +33,7 @@ submitTask.addEventListener('click', (e) => {
         alert("Tarefa não válida")
         return
     }
+    // Create a new todo with an id and set completed to false
     let newTask = {"Name":task.value, "id":tasksCount,"completed":false}
     tasks.push(newTask)
     
