@@ -8,6 +8,7 @@ const form = document.getElementById('taskform')
 
 var deleteTask = ""
 var tasks = []
+const tasksMap = new Map([])
 let tasksCount = 0
 var activeTasks = []
 
@@ -42,6 +43,8 @@ submitTask.addEventListener('click', (e) => {
         alert("Tarefa não válida")
         return
     }
+    tasksMap = [tasksCount, {name:task.value, completed:false}]
+    console.log(tasksMap)
     // Create a new todo with an id and set completed to false
     let newTask = {name:task.value, id:tasksCount,completed:false}
 
