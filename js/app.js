@@ -35,7 +35,6 @@ modal_container.addEventListener('click', (e) => {
 
 
 submitTask.addEventListener('click', (e) => {
-    deleteTask = document.getElementById('deleteTask')
     e.preventDefault()
     const task = document.getElementById('task-name')
     const task_name = ""+task.value
@@ -89,7 +88,7 @@ function updateContent(){
                 content.innerHTML += temp
             })
             
-            
+            deleteTask = document.getElementById('deleteTask')
         break;
         case 'completed':
             content.innerHTML = 
@@ -114,8 +113,6 @@ function updateContent(){
 window.addEventListener('hashchange', updateContent);
 // Renderiza a view atual ao carregar o script (útil ao recarregar a página)
 updateContent();
-
-
 function setActive(item){
         //Get the element that was clicked allways the first
         const newActive = document.querySelector(`#${item}`)
@@ -134,22 +131,32 @@ function setActive(item){
 function delTask(itemId) {
     // count gets the number of iteratios, item will be the item that is equal to the itemIds
     var count = 0
-    var item = 0
+    var item = 0;
+    
+    console.log(tasks)
+    if (itemId === 0) {
+        tasks.shift()
+        console.log(tasks)
+        updateContent()
+        return
+    }
     
     //Looping each item of the array
     tasks.forEach((obj) => {
+
         // Get the current object, each one has 3 values [name,id, complted]
         const values = Object.values(obj)
 
         // if the id equals the itemId
         if (values[1] == itemId) {
             // get the current index
-            item == count;
+            item == count
         }
-        // update count
+        // updtae count
         count += 1;
     })
-    tasks.splice(1, item)
+    
+    tasks.pop(item)
 
     updateContent()
 }
