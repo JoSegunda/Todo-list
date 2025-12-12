@@ -6,8 +6,11 @@ const submitTask = document.getElementById('submit-task')
 const form = document.getElementById('taskform')
 
 
+var deleteTask = ""
 var tasks = []
+var tasksMap = new Map([])
 let tasksCount = 0
+var activeTasks = []
 
 
 
@@ -35,16 +38,18 @@ modal_container.addEventListener('click', (e) => {
 submitTask.addEventListener('click', (e) => {
     e.preventDefault()
     const task = document.getElementById('task-name')
-    const task_name = ('' + task.value).trim()
+    const task_name = ""+task.value
     if (!task_name) {
         alert("Tarefa não válida")
         return
     }
+    
+    tasksMap.set(tasksCount, {name:task.value, completed:false})
+    console.log(tasksMap)
     // Create a new todo with an id and set completed to false
-    tasksCount += 1
-    const newTask = {name: task_name, id: tasksCount, completed: false}
+    let newTask = {name:task.value, id:tasksCount,completed:false}
 
-    // Add the created object to the tasks array (source of truth)
+    // Add the created object to the existent tasks
     tasks.push(newTask)
     
     
@@ -55,6 +60,7 @@ submitTask.addEventListener('click', (e) => {
         // Do a reset on the form
         form.reset()
 
+        tasksCount += 1
         // Atualiza a view atual assim que a tarefa é criada
         updateContent()
     }
@@ -65,36 +71,42 @@ function updateContent(){
     const hash = window.location.hash.substring(1) // remove o # do hash
     
     switch(hash){
-        case 'active': {
-            // Render tasks that are not completed
-            const visible = tasks.filter(t => !t.completed)
-            if (visible.length === 0) {
-                content.innerHTML = '<p>Nenhuma tarefa ativa</p>'
-            } else {
-                const html = visible.map(t => `\n                    <div class="tarefas" data-id="${t.id}">\n                        <div class="iscompleted">\n                          <i data-action="toggle-complete" data-id="${t.id}" class="fa-regular fa-circle-check fa-lg show-fa"></i>\n                          <i class="fa-solid fa-circle-check fa-lg hide-fa"></i>\n                        </div>\n                        <div class="tarefa-name"><p>${t.name}</p></div>\n                        <div class="deleteTask"><i data-action="delete" data-id="${t.id}" class="fa-solid fa-trash"></i></div>\n                    </div>\n                `).join('')
-                content.innerHTML = html
-            }
-            break;
-        }
+        case 'active':
+            content.innerHTML = ""
+            var temp = ""
+            // this loop is to get each object inside the array
+            tasks.forEach((task) => {
+
+                const objectValues = Object.values(task)
+             
+                if(!objectValues[2]){  // If the task is not completed (false) we can show it
+                        
+                    temp = `
+                    <div id="tarefas" class="${objectValues[1]}">
+                        <div class="iscompleted"><i onclick="taskCompleted()" class="fa-regular fa-circle-check fa-lg show-fa"></i><i class="fa-solid fa-circle-check fa-lg hide-fa"></i></div>
+                        <div id="tarefa-name"><p>${objectValues[0]}</p></div>
+                        <div id="deleteTask"><i class="fa-solid fa-trash" onclick="delTask(${objectValues[1]})"></i></div>
+                    </div>
+                    `;
+                }
+                content.innerHTML += temp
+            })
+            
+            deleteTask = document.getElementById('deleteTask')
         break;
-        case 'completed': {
-            const visible = tasks.filter(t => t.completed)
-            if (visible.length === 0) {
-                content.innerHTML = '<p>Nenhuma tarefa concluída</p>'
-            } else {
-                content.innerHTML = visible.map(t => `\n                    <div class="tarefas" data-id="${t.id}">\n                        <div class="iscompleted">\n                          <i data-action="toggle-complete" data-id="${t.id}" class="fa-regular fa-circle-check fa-lg show-fa"></i>\n                          <i class="fa-solid fa-circle-check fa-lg hide-fa"></i>\n                        </div>\n                        <div class="tarefa-name"><p>${t.name}</p></div>\n                        <div class="deleteTask"><i data-action="delete" data-id="${t.id}" class="fa-solid fa-trash"></i></div>\n                    </div>\n                `).join('')
-            }
-            break;
-        }
+        case 'completed':
+            content.innerHTML = 
+            `
+                <h1>Completed</h1>
+                <p>Bem vindo a completed page</p>
+            `;
         break;
-        case 'all-todos': {
-            if (tasks.length === 0) {
-                content.innerHTML = '<p>Nenhuma tarefa</p>'
-            } else {
-                content.innerHTML = tasks.map(t => `\n                    <div class="tarefas" data-id="${t.id}">\n                        <div class="iscompleted">\n                          <i data-action="toggle-complete" data-id="${t.id}" class="fa-regular fa-circle-check fa-lg show-fa"></i>\n                          <i class="fa-solid fa-circle-check fa-lg hide-fa"></i>\n                        </div>\n                        <div class="tarefa-name"><p>${t.name}</p></div>\n                        <div class="deleteTask"><i data-action="delete" data-id="${t.id}" class="fa-solid fa-trash"></i></div>\n                    </div>\n                `).join('')
-            }
-            break;
-        }
+        case 'all-todos':
+            content.innerHTML = 
+            `
+                <h1>All-todos</h1>
+                <p>Bem vindo a All-todos page</p>
+            `;
         break;
         default:
             // Se não houver hash, mantém o conteúdo atual ou mostra active por padrão
@@ -105,20 +117,6 @@ function updateContent(){
 window.addEventListener('hashchange', updateContent);
 // Renderiza a view atual ao carregar o script (útil ao recarregar a página)
 updateContent();
-// --- Event delegation: handle delete / complete actions centrally ---
-const contentElement = document.getElementById('content')
-contentElement.addEventListener('click', (e) => {
-    const btn = e.target.closest('[data-action]')
-    if (!btn) return
-    const action = btn.dataset.action
-    const id = parseInt(btn.dataset.id, 10)
-    if (action === 'delete') {
-        delTask(id)
-    }
-    if (action === 'toggle-complete') {
-        taskCompleted(id)
-    }
-})
 function setActive(item){
         //Get the element that was clicked allways the first
         const newActive = document.querySelector(`#${item}`)
@@ -135,17 +133,34 @@ function setActive(item){
 
 
 function delTask(itemId) {
-    const index = tasks.findIndex(t => t.id === itemId)
-    if (index > -1) {
-        tasks.splice(index, 1)
+    // count gets the number of iteratios, item will be the item that is equal to the itemIds
+    var count = 0
+    var item = 0;
+    
+    console.log(tasks)
+    if (itemId === 0) {
+        tasks.shift()
+        console.log(tasks)
+        updateContent()
+        return
     }
-    updateContent()
-}
+    
+    //Looping each item of the array
+    tasks.forEach((obj) => {
 
-function taskCompleted(itemId) {
-    const task = tasks.find(t => t.id === itemId)
-    if (task) {
-        task.completed = !task.completed
-    }
+        // Get the current object, each one has 3 values [name,id, complted]
+        const values = Object.values(obj)
+
+        // if the id equals the itemId
+        if (values[1] == itemId) {
+            // get the current index
+            item == count
+        }
+        // updtae count
+        count += 1;
+    })
+    
+    tasks.pop(item)
+
     updateContent()
 }
