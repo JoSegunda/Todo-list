@@ -138,7 +138,6 @@ function delTask(itemId) {
     
     //Looping each item of the array
     tasks.forEach((obj) => {
-
         // Get the current object, each one has 3 values [name,id, complted]
         const values = Object.values(obj)
 
@@ -150,8 +149,7 @@ function delTask(itemId) {
         // update count
         count += 1;
     })
-    
-    tasks.pop(item)
+    tasks.splice(1, item)
 
     updateContent()
 }
