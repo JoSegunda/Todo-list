@@ -45,11 +45,13 @@ body{
 }
 #navigation{
     display: flex;
+    justify-content: center;
     gap: 3rem;
     padding: 12px;
     margin-top: 2rem;
     font-size: 1.3rem;
     color: #fefae0;
+    width: 58%;
 }
 a{
     color: #fefae0;
@@ -60,6 +62,8 @@ a{
     padding: 12px;
     border-radius: 16px;
     cursor: pointer;
+    width: inherit;
+    text-align: center;
 }
 .active{
     background-color: #dda15e;
@@ -68,10 +72,11 @@ a{
     display: none;
 }
 #content{
-    width: 27rem;
+    width: 55%;
 }
 
 /* CONTENT PART OF ADDING THE TASKS */
+
 
 #tarefas{
     margin-top: 1rem;
@@ -82,7 +87,8 @@ a{
     flex-direction: row;
     justify-content: space-between;
     align-items: baseline;
-    width: inherit;
+    align-content: center;
+    width: 100%;
 }
 .fa-trash:hover{
     color: red;
