@@ -75,9 +75,7 @@ function updateContent(){
     
     switch(hash){
         case 'active':
-            
             // this loop is to get each object inside the array
-
             tasksMap.forEach((task, id) => {
                 if (!task.completed) {
                     temp += `
