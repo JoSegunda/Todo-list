@@ -64,6 +64,7 @@ submitTask.addEventListener('click', (e) => {
         // Atualiza a view atual assim que a tarefa é criada
         updateContent()
     }
+    updateContent()
 })
 
 function updateContent(){
@@ -181,6 +182,7 @@ function taskCompleted(key){
 
     if(tasksMap.has(key)){
         tasksMap.get(key).completed = true
-        updateContent()
+        
     }
+    updateContent()
 }
