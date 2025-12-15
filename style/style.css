@@ -181,7 +181,7 @@ label{
     .view-list{
         height: fit-content;
     }
-    #navigation:nth-last-child(){
-        font-size: .2em;
+    a#all-todos{
+        width: 100%;
     }
 }
