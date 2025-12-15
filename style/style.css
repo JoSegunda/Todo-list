@@ -90,15 +90,15 @@ a{
 }
 .fa-solid.fa-circle-check{
     color: green;
-    transition: .5s ease-in;
+    transition: .8s ease-in;
 }
 .fa-circle-check:hover{
     cursor: pointer;
-    transition: .5s ease-in;
+    transition: .8s ease-in;
 }
 .hide-fa{
     display: none;
-    transition: .5s ease-in;
+    transition: .8s ease-in;
 }
 
 /* Modal style */
