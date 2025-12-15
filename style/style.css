@@ -184,4 +184,7 @@ label{
     a#all-todos{
         width: 100%;
     }
+    #navigation{
+        gap: .5rem;
+    }
 }
