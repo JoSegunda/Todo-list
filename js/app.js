@@ -173,5 +173,6 @@ function taskCompleted(key){
 
     if(tasksMap.has(key)){
         tasksMap.get(key).completed = true
+        updateContent()
     }
 }
