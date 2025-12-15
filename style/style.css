@@ -178,5 +178,8 @@ label{
 }
 
 @media (max-width: 600px){
+    .view-list{
+        height: fit-content;
+    }
     
 }
