@@ -69,13 +69,14 @@ submitTask.addEventListener('click', (e) => {
 function updateContent(){
     const content = document.getElementById('content')
     const hash = window.location.hash.substring(1) // remove o # do hash
+
+    content.innerHTML = ""
+    var temp = ""
     
     switch(hash){
         case 'active':
-            content.innerHTML = ""
-            var temp = ""
+            
             // this loop is to get each object inside the array
-
 
             tasksMap.forEach((task, id) => {
                 if (!task.completed) {
@@ -88,15 +89,15 @@ function updateContent(){
                     </div>
 
                     `;
-                }
-
-                
+                } 
             });
 
             // Substitui o conteúdo (não acumula) para evitar duplicações
             content.innerHTML = temp
         break;
         case 'completed':
+
+
             content.innerHTML = 
             `
                 <h1>Completed</h1>
@@ -104,11 +105,19 @@ function updateContent(){
             `;
         break;
         case 'all-todos':
-            content.innerHTML = 
-            `
-                <h1>All-todos</h1>
-                <p>Bem vindo a All-todos page</p>
-            `;
+            
+            tasksMap.forEach((task, id) => {
+               
+                temp += `
+                <div id="tarefas" class="${id}">
+                    <div class="iscompleted"><i onclick="taskCompleted()" class="fa-regular fa-circle-check fa-lg show-fa"></i><i class="fa-solid fa-circle-check fa-lg hide-fa"></i></div>
+                    <div id="tarefa-name"><p>${task.name}</p></div>
+                    <div id="deleteTask"><i class="fa-solid fa-trash" onclick="delTask(${id})"></i></div>
+                </div>
+                `;
+            
+            });
+            content.innerHTML = temp
         break;
         default:
             // Se não houver hash, mantém o conteúdo atual ou mostra active por padrão
