@@ -97,15 +97,25 @@ function updateContent(){
         break;
         case 'completed':
 
+            tasksMap.forEach((task, id) => {
+                if (task.completed) {
+                    temp += `
 
-            content.innerHTML = 
-            `
-                <h1>Completed</h1>
-                <p>Bem vindo a completed page</p>
-            `;
+                    <div id="tarefas" class="${id}">
+                        <div class="iscompleted"><i onclick="taskCompleted()" class="fa-regular fa-circle-check fa-lg show-fa"></i><i class="fa-solid fa-circle-check fa-lg hide-fa"></i></div>
+                        <div id="tarefa-name"><p>${task.name}</p></div>
+                        <div id="deleteTask"><i class="fa-solid fa-trash" onclick="delTask(${id})"></i></div>
+                    </div>
+
+                    `;
+                } 
+            });
+
+            content.innerHTML = temp
+
         break;
         case 'all-todos':
-            
+
             tasksMap.forEach((task, id) => {
                
                 temp += `
@@ -146,7 +156,6 @@ function setActive(item){
 
 
 function delTask(itemId) {
-    // Delete directly by key (itemId). Usar o índice de iteração falha
     // porque o Map usa chaves, não índices.
     if (tasksMap.has(itemId)) {
         tasksMap.delete(itemId)
