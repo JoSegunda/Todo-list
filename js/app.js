@@ -81,7 +81,6 @@ function updateContent(){
             tasksMap.forEach((task, id) => {
                 if (!task.completed) {
                     temp += `
-
                     <div id="tarefas" class="${id}">
                         <div class="iscompleted"><i onclick="taskCompleted(${id})" class="fa-regular fa-circle-check fa-lg show-fa"></i><i class="fa-solid fa-circle-check fa-lg hide-fa"></i></div>
                         <div id="tarefa-name"><p>${task.name}</p></div>
@@ -102,7 +101,7 @@ function updateContent(){
                     temp += `
 
                     <div id="tarefas" class="${id}">
-                        <div class="iscompleted"><i onclick="taskCompleted(${id})" class="fa-regular fa-circle-check fa-lg show-fa"></i><i class="fa-solid fa-circle-check fa-lg hide-fa"></i></div>
+                        <div class="iscompleted"><i onclick="taskCompleted(${id})" class="fa-regular fa-circle-check fa-lg hide-fa"></i><i class="fa-solid fa-circle-check fa-lg show-fa"></i></div>
                         <div id="tarefa-name"><p>${task.name}</p></div>
                         <div id="deleteTask"><i class="fa-solid fa-trash" onclick="delTask(${id})"></i></div>
                     </div>
@@ -117,15 +116,26 @@ function updateContent(){
         case 'all-todos':
 
             tasksMap.forEach((task, id) => {
-               
-                temp += `
-                <div id="tarefas" class="${id}">
-                    <div class="iscompleted"><i onclick="taskCompleted(${id})" class="fa-regular fa-circle-check fa-lg show-fa"></i><i class="fa-solid fa-circle-check fa-lg hide-fa"></i></div>
-                    <div id="tarefa-name"><p>${task.name}</p></div>
-                    <div id="deleteTask"><i class="fa-solid fa-trash" onclick="delTask(${id})"></i></div>
-                </div>
-                `;
-            
+
+                if (task.completed) {
+                    temp += `
+
+                    <div id="tarefas" class="${id}">
+                        <div class="iscompleted"><i onclick="taskCompleted(${id})" class="fa-regular fa-circle-check fa-lg hide-fa"></i><i class="fa-solid fa-circle-check fa-lg show-fa"></i></div>
+                        <div id="tarefa-name"><p>${task.name}</p></div>
+                        <div id="deleteTask"><i class="fa-solid fa-trash" onclick="delTask(${id})"></i></div>
+                    </div>
+
+                    `;
+                }else{
+                    temp += `
+                    <div id="tarefas" class="${id}">
+                        <div class="iscompleted"><i onclick="taskCompleted(${id})" class="fa-regular fa-circle-check fa-lg show-fa"></i><i class="fa-solid fa-circle-check fa-lg hide-fa"></i></div>
+                        <div id="tarefa-name"><p>${task.name}</p></div>
+                        <div id="deleteTask"><i class="fa-solid fa-trash" onclick="delTask(${id})"></i></div>
+                    </div>
+                    `;
+                }
             });
             content.innerHTML = temp
         break;
