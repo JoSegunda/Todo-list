@@ -44,8 +44,6 @@ submitTask.addEventListener('click', (e) => {
         return
     }
     
-    tasksMap.set(tasksCount, {name:task.value, completed:false})
-    console.log(tasksMap)
     // Create a new todo with an id and set completed to false
     let newTask = {name:task.value, id:tasksCount,completed:false}
 
@@ -54,6 +52,8 @@ submitTask.addEventListener('click', (e) => {
     
     
     if (task_name) {
+        tasksMap.set(tasksCount, {name:task.value, completed:false})
+        console.log(tasksMap)
         // Show a message that the task has been added
         alert("The task was succesfuly added")
 
@@ -75,22 +75,40 @@ function updateContent(){
             content.innerHTML = ""
             var temp = ""
             // this loop is to get each object inside the array
-            tasks.forEach((task) => {
 
-                const objectValues = Object.values(task)
-             
-                if(!objectValues[2]){  // If the task is not completed (false) we can show it
-                        
-                    temp = `
-                    <div id="tarefas" class="${objectValues[1]}">
+
+            tasksMap.forEach((task, id) => {
+
+                temp += `
+
+                    <div id="tarefas" class="${id}">
                         <div class="iscompleted"><i onclick="taskCompleted()" class="fa-regular fa-circle-check fa-lg show-fa"></i><i class="fa-solid fa-circle-check fa-lg hide-fa"></i></div>
-                        <div id="tarefa-name"><p>${objectValues[0]}</p></div>
-                        <div id="deleteTask"><i class="fa-solid fa-trash" onclick="delTask(${objectValues[1]})"></i></div>
+                        <div id="tarefa-name"><p>${task.name}</p></div>
+                        <div id="deleteTask"><i class="fa-solid fa-trash" onclick="delTask(${id})"></i></div>
                     </div>
+                    
                     `;
-                }
-                content.innerHTML += temp
-            })
+            });
+
+
+            // tasks.forEach((task) => {
+
+            //     const objectValues = Object.values(task)
+             
+            //     if(!objectValues[2]){  // If the task is not completed (false) we can show it
+                        
+            //         temp = `
+            //         <div id="tarefas" class="${objectValues[1]}">
+            //             <div class="iscompleted"><i onclick="taskCompleted()" class="fa-regular fa-circle-check fa-lg show-fa"></i><i class="fa-solid fa-circle-check fa-lg hide-fa"></i></div>
+            //             <div id="tarefa-name"><p>${objectValues[0]}</p></div>
+            //             <div id="deleteTask"><i class="fa-solid fa-trash" onclick="delTask(${objectValues[1]})"></i></div>
+            //         </div>
+            //         `;
+            //     }
+            //     content.innerHTML += temp
+            // })
+
+            content.innerHTML += temp
             
             deleteTask = document.getElementById('deleteTask')
         break;
@@ -139,30 +157,13 @@ function delTask(itemId) {
     var count = 0
     var item = 0;
     
-    console.log(tasks)
-    if (itemId === 0) {
-        tasks.shift()
-        console.log(tasks)
-        updateContent()
-        return
-    }
-    
-    //Looping each item of the array
-    tasks.forEach((obj) => {
-
-        // Get the current object, each one has 3 values [name,id, complted]
-        const values = Object.values(obj)
-
-        // if the id equals the itemId
-        if (values[1] == itemId) {
-            // get the current index
-            item == count
+    tasksMap.forEach((task, id) => {
+        if (id === itemId) {
+            item = count
         }
-        // updtae count
-        count += 1;
+        count += 1
     })
-    
-    tasks.pop(item)
 
+    tasksMap.delete(item)
     updateContent()
 }
