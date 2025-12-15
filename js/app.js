@@ -169,5 +169,7 @@ function taskCompleted(){
     const hidefa = document.querySelector('.hide-fa')
 
     showfa.classList.replace('show-fa','hide-fa')
-    hide.classList.replace('hide-fa','show-fa')
+    hidefa.classList.replace('hide-fa','show-fa')
+
+    
 }
