@@ -163,3 +163,7 @@ function delTask(itemId) {
 
     updateContent()
 }
+
+function taskCompleted(){
+    
+}
