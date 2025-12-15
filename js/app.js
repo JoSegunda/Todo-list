@@ -78,39 +78,23 @@ function updateContent(){
 
 
             tasksMap.forEach((task, id) => {
-
-                temp += `
+                if (!task.completed) {
+                    temp += `
 
                     <div id="tarefas" class="${id}">
                         <div class="iscompleted"><i onclick="taskCompleted()" class="fa-regular fa-circle-check fa-lg show-fa"></i><i class="fa-solid fa-circle-check fa-lg hide-fa"></i></div>
                         <div id="tarefa-name"><p>${task.name}</p></div>
                         <div id="deleteTask"><i class="fa-solid fa-trash" onclick="delTask(${id})"></i></div>
                     </div>
-                    
+
                     `;
+                }
+
+                
             });
 
-
-            // tasks.forEach((task) => {
-
-            //     const objectValues = Object.values(task)
-             
-            //     if(!objectValues[2]){  // If the task is not completed (false) we can show it
-                        
-            //         temp = `
-            //         <div id="tarefas" class="${objectValues[1]}">
-            //             <div class="iscompleted"><i onclick="taskCompleted()" class="fa-regular fa-circle-check fa-lg show-fa"></i><i class="fa-solid fa-circle-check fa-lg hide-fa"></i></div>
-            //             <div id="tarefa-name"><p>${objectValues[0]}</p></div>
-            //             <div id="deleteTask"><i class="fa-solid fa-trash" onclick="delTask(${objectValues[1]})"></i></div>
-            //         </div>
-            //         `;
-            //     }
-            //     content.innerHTML += temp
-            // })
-
-            content.innerHTML += temp
-            
-            deleteTask = document.getElementById('deleteTask')
+            // Substitui o conteúdo (não acumula) para evitar duplicações
+            content.innerHTML = temp
         break;
         case 'completed':
             content.innerHTML = 
@@ -153,17 +137,11 @@ function setActive(item){
 
 
 function delTask(itemId) {
-    // count gets the number of iteratios, item will be the item that is equal to the itemIds
-    var count = 0
-    var item = 0;
-    
-    tasksMap.forEach((task, id) => {
-        if (id === itemId) {
-            item = count
-        }
-        count += 1
-    })
+    // Delete directly by key (itemId). Usar o índice de iteração falha
+    // porque o Map usa chaves, não índices.
+    if (tasksMap.has(itemId)) {
+        tasksMap.delete(itemId)
+    }
 
-    tasksMap.delete(item)
     updateContent()
 }
