@@ -21,7 +21,7 @@ body{
     padding: 1rem;
     width: 50rem;
     height: 30rem;
-    min-height: max-content;
+    max-height: max-content;
     max-width: 100%;
     border-radius: 16px;
     box-shadow: 1px 1px 0px 0px #283618;
