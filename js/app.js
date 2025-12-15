@@ -44,7 +44,7 @@ submitTask.addEventListener('click', (e) => {
         return
     }
     
-    tasksMap.set([tasksCount, {name:task.value, completed:false}])
+    tasksMap.set(tasksCount, {name:task.value, completed:false})
     console.log(tasksMap)
     // Create a new todo with an id and set completed to false
     let newTask = {name:task.value, id:tasksCount,completed:false}
