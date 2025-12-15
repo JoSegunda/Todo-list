@@ -172,6 +172,6 @@ function taskCompleted(key){
     hidefa.classList.replace('hide-fa','show-fa')
 
     if(tasksMap.has(key)){
-        
+        tasksMap.get(key).completed = true
     }
 }
