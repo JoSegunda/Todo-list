@@ -6,13 +6,9 @@ const submitTask = document.getElementById('submit-task')
 const form = document.getElementById('taskform')
 
 
-var deleteTask = ""
-var tasks = []
 var tasksMap = new Map()
 let tasksCount = 0
 var activeTasks = []
-
-
 
 addButton.addEventListener('click', () => {
     modal_container.classList.add('show')
@@ -43,13 +39,6 @@ submitTask.addEventListener('click', (e) => {
         alert("Tarefa não válida")
         return
     }
-    
-    // Create a new todo with an id and set completed to false
-    let newTask = {name:task.value, id:tasksCount,completed:false}
-
-    // Add the created object to the existent tasks
-    tasks.push(newTask)
-    
     
     if (task_name) {
         tasksMap.set(tasksCount, {name:task.value, completed:false})
