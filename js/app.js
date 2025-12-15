@@ -174,6 +174,7 @@ function delTask(itemId) {
 }
 
 function taskCompleted(key){
+
     const showfa = document.querySelector('.show-fa')
     const hidefa = document.querySelector('.hide-fa')
 
@@ -185,4 +186,8 @@ function taskCompleted(key){
         
     }
     updateContent()
+}
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
