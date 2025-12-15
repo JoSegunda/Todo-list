@@ -83,7 +83,7 @@ function updateContent(){
                     temp += `
 
                     <div id="tarefas" class="${id}">
-                        <div class="iscompleted"><i onclick="taskCompleted()" class="fa-regular fa-circle-check fa-lg show-fa"></i><i class="fa-solid fa-circle-check fa-lg hide-fa"></i></div>
+                        <div class="iscompleted"><i onclick="taskCompleted(${id})" class="fa-regular fa-circle-check fa-lg show-fa"></i><i class="fa-solid fa-circle-check fa-lg hide-fa"></i></div>
                         <div id="tarefa-name"><p>${task.name}</p></div>
                         <div id="deleteTask"><i class="fa-solid fa-trash" onclick="delTask(${id})"></i></div>
                     </div>
@@ -102,7 +102,7 @@ function updateContent(){
                     temp += `
 
                     <div id="tarefas" class="${id}">
-                        <div class="iscompleted"><i onclick="taskCompleted()" class="fa-regular fa-circle-check fa-lg show-fa"></i><i class="fa-solid fa-circle-check fa-lg hide-fa"></i></div>
+                        <div class="iscompleted"><i onclick="taskCompleted(${id})" class="fa-regular fa-circle-check fa-lg show-fa"></i><i class="fa-solid fa-circle-check fa-lg hide-fa"></i></div>
                         <div id="tarefa-name"><p>${task.name}</p></div>
                         <div id="deleteTask"><i class="fa-solid fa-trash" onclick="delTask(${id})"></i></div>
                     </div>
@@ -120,7 +120,7 @@ function updateContent(){
                
                 temp += `
                 <div id="tarefas" class="${id}">
-                    <div class="iscompleted"><i onclick="taskCompleted()" class="fa-regular fa-circle-check fa-lg show-fa"></i><i class="fa-solid fa-circle-check fa-lg hide-fa"></i></div>
+                    <div class="iscompleted"><i onclick="taskCompleted(${id})" class="fa-regular fa-circle-check fa-lg show-fa"></i><i class="fa-solid fa-circle-check fa-lg hide-fa"></i></div>
                     <div id="tarefa-name"><p>${task.name}</p></div>
                     <div id="deleteTask"><i class="fa-solid fa-trash" onclick="delTask(${id})"></i></div>
                 </div>
@@ -171,5 +171,5 @@ function taskCompleted(){
     showfa.classList.replace('show-fa','hide-fa')
     hidefa.classList.replace('hide-fa','show-fa')
 
-    
+
 }
