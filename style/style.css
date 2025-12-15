@@ -91,6 +91,9 @@ a{
 .fa-solid.fa-circle-check{
     color: green;
 }
+.fa-circle-check:hover{
+    cursor: pointer;
+}
 .hide-fa{
     display: none;
 }
