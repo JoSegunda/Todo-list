@@ -165,5 +165,9 @@ function delTask(itemId) {
 }
 
 function taskCompleted(){
-    
+    const showfa = document.querySelector('.show-fa')
+    const hidefa = document.querySelector('.hide-fa')
+
+    showfa.classList.replace('show-fa','hide-fa')
+    hide.classList.replace('hide-fa','show-fa')
 }
