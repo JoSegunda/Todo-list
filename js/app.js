@@ -117,6 +117,8 @@ function updateContent(){
 window.addEventListener('hashchange', updateContent);
 // Renderiza a view atual ao carregar o script (útil ao recarregar a página)
 updateContent();
+
+
 function setActive(item){
         //Get the element that was clicked allways the first
         const newActive = document.querySelector(`#${item}`)
