@@ -167,9 +167,8 @@ async function taskCompleted(key){
     const showfa = document.querySelector('.show-fa')
     const hidefa = document.querySelector('.hide-fa')
 
-    hidefa.classList.replace('hide-fa','show-fa')
     showfa.classList.replace('show-fa','hide-fa')
-    
+    hidefa.classList.replace('hide-fa','show-fa')
 
     await sleep(1000)
     tasksMap.get(key).completed = true
