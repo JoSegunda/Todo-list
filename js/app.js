@@ -169,6 +169,7 @@ async function taskCompleted(key){
 
     showfa.classList.replace('show-fa','hide-fa')
     hidefa.classList.replace('hide-fa','show-fa')
+    
     await sleep(1000)
     if(tasksMap.has(key)){
         tasksMap.get(key).completed = true
