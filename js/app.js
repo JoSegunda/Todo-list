@@ -64,7 +64,6 @@ function updateContent(){
     var temp = ""
     
     switch(hash){
-        
         case 'completed':
 
             tasksMap.forEach((task, id) => {
