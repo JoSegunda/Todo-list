@@ -42,7 +42,6 @@ submitTask.addEventListener('click', (e) => {
     
     if (task_name) {
         tasksMap.set(tasksCount, {name:task.value, completed:false})
-        console.log(tasksMap)
         // Show a message that the task has been added
         alert("The task was succesfuly added")
 
