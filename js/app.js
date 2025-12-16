@@ -44,6 +44,7 @@ submitTask.addEventListener('click', (e) => {
         tasksMap.set(tasksCount, {name:task.value, completed:false})
         // Show a message that the task has been added
         alert("The task was succesfuly added")
+        updateContent()
 
         // Do a reset on the form
         form.reset()
@@ -52,7 +53,7 @@ submitTask.addEventListener('click', (e) => {
         // Atualiza a view atual assim que a tarefa é criada
        
     }
-    updateContent()
+    
 })
 
 function updateContent(){
