@@ -165,17 +165,14 @@ function delTask(itemId) {
 async function taskCompleted(key){
     
     const showfa = document.querySelector('.show-fa')
-    const hidefa = document.querySelector('.hide-fa')
+    const hidefa = document.querySelector('.')
 
     showfa.classList.replace('show-fa','hide-fa')
     hidefa.classList.replace('hide-fa','show-fa')
 
     await sleep(1000)
-    if(tasksMap.has(key)){
-        
-        tasksMap.get(key).completed = true
-        
-    }
+    tasksMap.get(key).completed = true
+    
     updateContent()
 }
 
