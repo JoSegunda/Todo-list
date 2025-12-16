@@ -51,7 +51,7 @@ submitTask.addEventListener('click', (e) => {
 
         tasksCount += 1
         // Atualiza a view atual assim que a tarefa é criada
-        updateContent()
+       
     }
     updateContent()
 })
