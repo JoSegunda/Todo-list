@@ -160,6 +160,7 @@ function delTask(itemId) {
 async function taskCompleted(key){
     
     const showfa = document.querySelector('.show-fa')
+    console.log(showfa)
     const hidefa = document.querySelector('.hide-fa')
 
     showfa.classList.replace('show-fa','hide-fa')
