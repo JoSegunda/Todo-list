@@ -84,7 +84,6 @@ function updateContent(){
 
         break;
         case 'all-todos':
-
             tasksMap.forEach((task, id) => {
 
                 if (task.completed) {
@@ -163,8 +162,7 @@ async function taskCompleted(key){
     const showfa = document.querySelector('.show-fa')
     const hidefa = document.querySelector('.hide-fa')
 
-    showfa.classList.replace('show-fa','hide-fa')
-    hidefa.classList.replace('hide-fa','show-fa')
+    showfa.classList.replace('hide-fa','show-fa')
 
     await sleep(1000)
     tasksMap.get(key).completed = true
