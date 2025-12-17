@@ -4,12 +4,12 @@ const close = document.getElementById('close-modal')
 const modal = document.getElementById('modal')
 const submitTask = document.getElementById('submit-task')
 const form = document.getElementById('taskform')
-const completed = document.querySelector('.isCompleted')
 
 
 var tasksMap = new Map()
 let tasksCount = 0
 var activeTasks = []
+
 
 addButton.addEventListener('click', () => {
     modal_container.classList.add('show')
@@ -161,9 +161,7 @@ function delTask(itemId) {
 async function taskCompleted(key){
     
     const showfa = document.querySelector('.show-fa')
-    console.log(showfa)
     const hidefa = document.querySelector('.hide-fa')
-    console.log(hidefa)
 
     showfa.classList.replace('show-fa','hide-fa')
     hidefa.classList.replace('hide-fa','show-fa')
