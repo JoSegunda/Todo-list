@@ -160,16 +160,10 @@ function delTask(itemId) {
 
 async function taskCompleted(key){
     const isCompleted = document.querySelector(`.task${key}`).children[0]
-    const showfa= isCompleted.children[0]
-    const hidefa= isCompleted.children[1]
-    console.log(isCompleted)
-
-
-    const showfa = document.querySelector('.show-fa')
-    const hidefa = document.querySelector('.hide-fa')
-
+    const showfa = isCompleted.children[0]
+    const hidefa = isCompleted.children[1]
+  
     showfa.classList.replace('show-fa','hide-fa')
-
     hidefa.classList.replace('hide-fa','show-fa') // get the second one
 
     await sleep(1000)
