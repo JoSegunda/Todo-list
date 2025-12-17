@@ -4,6 +4,7 @@ const close = document.getElementById('close-modal')
 const modal = document.getElementById('modal')
 const submitTask = document.getElementById('submit-task')
 const form = document.getElementById('taskform')
+const completed = document.querySelector('.isCompleted')
 
 
 var tasksMap = new Map()
