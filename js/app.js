@@ -136,7 +136,7 @@ updateContent();
 
 function setActive(item){
         //Get the element that was clicked allways the first
-        const newActive = document.querySelector(`.${item}`)
+        const newActive = document.querySelector(`#${item}`)
 
         if (newActive.classList[1] === 'inactive') {
             const currentActive = document.querySelector('.active')
@@ -159,7 +159,7 @@ function delTask(itemId) {
 }
 
 async function taskCompleted(key){
-    const completed = document.querySelector(`#${key}`)
+    const completed = document.querySelector(`.${key}`)
     console.log(completed)
     const showfa = document.querySelector('.show-fa')
     const hidefa = document.querySelector('.hide-fa')
