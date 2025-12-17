@@ -71,7 +71,7 @@ function updateContent(){
                 if (task.completed) {
                     temp += `
 
-                    <div id="tarefas" class="${id}">
+                    <div id="tarefas" class="task${id}">
                         <div class="iscompleted"><i onclick="taskCompleted(${id})" class="fa-regular fa-circle-check fa-lg hide-fa"></i><i class="fa-solid fa-circle-check fa-lg show-fa"></i></div>
                         <div id="tarefa-name"><p>${task.name}</p></div>
                         <div id="deleteTask"><i class="fa-solid fa-trash" onclick="delTask(${id})"></i></div>
@@ -90,7 +90,7 @@ function updateContent(){
                 if (task.completed) {
                     temp += `
 
-                    <div id="tarefas" class="${id}">
+                    <div id="tarefas" class="task${id}">
                         <div class="iscompleted"><i onclick="taskCompleted(${id})" class="fa-regular fa-circle-check fa-lg hide-fa"></i><i class="fa-solid fa-circle-check fa-lg show-fa"></i></div>
                         <div id="tarefa-name"><p>${task.name}</p></div>
                         <div id="deleteTask"><i class="fa-solid fa-trash" onclick="delTask(${id})"></i></div>
@@ -99,7 +99,7 @@ function updateContent(){
                     `;
                 }else{
                     temp += `
-                    <div id="tarefas" class="${id}">
+                    <div id="tarefas" class="task${id}">
                         <div class="iscompleted"><i onclick="taskCompleted(${id})" class="fa-regular fa-circle-check fa-lg show-fa"></i><i class="fa-solid fa-circle-check fa-lg hide-fa"></i></div>
                         <div id="tarefa-name"><p>${task.name}</p></div>
                         <div id="deleteTask"><i class="fa-solid fa-trash" onclick="delTask(${id})"></i></div>
@@ -114,7 +114,7 @@ function updateContent(){
             tasksMap.forEach((task, id) => {
                 if (!task.completed) {
                     temp += `
-                    <div id="tarefas" class="${id}">
+                    <div id="tarefas" class="task${id}">
                         <div class="iscompleted" onclick="taskCompleted(${id})"><i class="fa-regular fa-circle-check fa-lg show-fa"></i><i class="fa-solid fa-circle-check fa-lg hide-fa"></i></div>
                         <div id="tarefa-name"><p>${task.name}</p></div>
                         <div id="deleteTask"><i class="fa-solid fa-trash" onclick="delTask(${id})"></i></div>
@@ -159,8 +159,12 @@ function delTask(itemId) {
 }
 
 async function taskCompleted(key){
-    const completed = document.querySelector(`.${key}`)
-    console.log(completed)
+    const isCompleted = document.querySelector(`.task${key}`).children[0]
+    const showfa= isCompleted.children[0]
+    const hidefa= isCompleted.children[1]
+    console.log(isCompleted)
+
+
     const showfa = document.querySelector('.show-fa')
     const hidefa = document.querySelector('.hide-fa')
 
